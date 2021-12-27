@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter_30days/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text("Welcome to $days days of Flutter by " + name), 
         ),
-      drawer: const Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
