@@ -60,6 +60,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/images_login.jpg
+    - assets/images/images_hey.jpg
     - assets/fonts/
     - assets/fonts/Lato-Black.ttf
     - assets/fonts/Lato-Bold.ttf
