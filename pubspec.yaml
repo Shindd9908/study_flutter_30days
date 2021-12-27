@@ -84,9 +84,9 @@ flutter:
   fonts:
     - family: Lato
       fonts:
-        - asset: fonts/Lato-Black.ttf
-        - asset: fonts/Lato-Bold.ttf
-        - asset: fonts/Lato-Regular.ttf
+        - asset: assets/fonts/Lato-Black.ttf
+        - asset: assets/fonts/Lato-Bold.ttf
+        - asset: assets/fonts/Lato-Regular.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
