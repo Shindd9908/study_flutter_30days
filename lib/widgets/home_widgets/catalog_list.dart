@@ -14,12 +14,16 @@ class CatalogList extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       itemBuilder: (contex, index) {
-        final catalog = CatalogModel.items[index];
+        final catalog = CatalogModel.getByPosition(index);
         return InkWell(
             onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (contex) => HomeDetailPage(catalog: catalog))),
+                  context,
+                  MaterialPageRoute(
+                    builder: (contex) => HomeDetailPage(
+                      catalog: catalog,
+                    ),
+                  ),
+                ),
             child: CatalogItem(catalog: catalog));
       },
       itemCount: CatalogModel.items.length,
@@ -66,6 +70,6 @@ class CatalogItem extends StatelessWidget {
           )),
         ],
       ),
-    ).white.roundedLg.square(200).make().py16();
+    ).color(context.cardColor).roundedLg.square(200).make().py16();
   }
 }
