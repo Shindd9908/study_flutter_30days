@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:study_flutter_30days/models/catalog.dart';
-import 'package:study_flutter_30days/models/catalog_model.dart';
 
 class ItemWidget extends StatelessWidget {
   final Item item;
@@ -9,11 +8,12 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Card(
+      shape: const StadiumBorder(),
       elevation: 0.0,
       child: ListTile(
         onTap: () {
+          // ignore: avoid_print
           print("${item.name} pressed");
         },
         leading: Image.network(item.image),
