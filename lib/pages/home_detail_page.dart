@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:study_flutter_30days/models/catalog.dart';
+import 'package:study_flutter_30days/utils/routes.dart';
 import 'package:study_flutter_30days/values/app_theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -25,8 +27,8 @@ class HomeDetailPage extends StatelessWidget {
                   backgroundColor:
                       MaterialStateProperty.all(AppTheme.darkBluishColor),
                   shape: MaterialStateProperty.all(const StadiumBorder())),
-              child: "Buy".text.make(),
-            ).wh(100, 50),
+              child: "Add to cart".text.make(),
+            ).wh(150, 50),
           ],
         ).p32(),
       ),
@@ -53,6 +55,9 @@ class HomeDetailPage extends StatelessWidget {
                           .make(),
                       catalog.desc.text.xl.make(),
                       10.heightBox,
+                      "Dolor sea takimata ipsum sea eirmod aliquyam est. Eos ipsum voluptua eirmod elitr, no dolor dolor amet eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita. Diam aliquyam amet tempor diam no aliquyam invidunt. Elitr lorem eirmod dolore clita. Rebum."
+                          .text
+                          .make(),
                     ],
                   ).py64(),
                 ),
