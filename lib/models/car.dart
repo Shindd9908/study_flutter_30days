@@ -1,4 +1,6 @@
+import 'package:study_flutter_30days/core/store.dart';
 import 'package:study_flutter_30days/models/catalog_model.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import 'catalog.dart';
 
@@ -23,21 +25,30 @@ class CartModel {
   }
 
   // Get items in the cart
-  List<Item> get items => _itemIds.map((id) => _catalogModel.getById(id)).toList();
+  List<Item> get items =>
+      _itemIds.map((id) => _catalogModel.getById(id)).toList();
 
   // Get total price
   num get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
+}
 
-  // Add Item
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
 
-  void add(Item item) {
-    _itemIds.add(item.id);
+  AddMutation(this.item);
+  @override
+  perform() {
+    store!.cartModel._itemIds.add(item.id);
   }
+}
 
-  // Remove Item
+class RemoveMutation extends VxMutation<MyStore> {
+  final Item item;
 
-  void remove(Item item) {
-    _itemIds.remove(item.id);
+  RemoveMutation(this.item);
+  @override
+  perform() {
+    store!.cartModel._itemIds.remove(item.id);
   }
 }
